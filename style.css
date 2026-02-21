@@ -1,0 +1,215 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Animated Dark Background */
+body {
+    height: 100vh;
+    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #000428);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    color: #fff;
+}
+
+/* Gradient Animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+h1 {
+    font-size: 2.5rem;
+    position: relative;
+    top: -20px;
+    margin-left: 3%;
+    text-shadow:0 0 15px rgba(0, 255, 255, 0.7);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Glassmorphism Container */
+.container {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 20px;
+    width: 350px;
+    margin-left: 20%;
+    margin-top: 10%;
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.2);
+    animation: float 4s ease-in-out infinite;
+}
+
+select option{
+    background-color: rgb(0, 0, 0);
+}
+
+/* Floating Effect */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Input & Select Styling */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus, select:focus {
+    box-shadow: 0 0 10px #00f7ff;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.655);
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #00f7ff, #00ff88);
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00ffcc;
+}
+
+/* Total Text */
+h3 {
+    margin-top: 0px;
+    text-align: center;
+    color: #00ffcc;
+}
+
+/* Expense List */
+ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+li {
+    background: rgba(255,255,255,0.1);
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideIn 0.5s ease;
+}
+
+/* Delete Button */
+li button {
+    width: auto;
+    padding: 5px 10px;
+    font-size: 12px;
+    background: #ff4b5c;
+    color: white;
+}
+
+li button:hover {
+    background: #ff1e38;
+}
+/* Dashboard layout */
+.dashboard {
+    display: flex;
+    gap: 50px;
+    width: 100%;
+}
+
+/* Left side */
+.left-panel {
+    flex: 1;
+}
+
+/* Right side */
+.right-panel {
+    flex: 1;
+}
+
+/* Expense card on right */
+.expense-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.15);
+    height: 300px;
+    margin: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Total text */
+.expense-card h2 {
+    color: #00ffcc;
+    margin-bottom: 20px;
+}
+
+/* Scrollable list */
+#expense-list {
+    list-style: none;
+    overflow-y: auto;
+    flex-grow: 1;
+    padding-right: 5px;
+}
+
+/* Scrollbar */
+#expense-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+#expense-list::-webkit-scrollbar-thumb {
+    background: #00f7ff;
+    border-radius: 10px;
+}
+
+/* Slide Animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@media (max-width: 900px) {
+    .dashboard {
+        flex-direction: column;
+    }
+}
